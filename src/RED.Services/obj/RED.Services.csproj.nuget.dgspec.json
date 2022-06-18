@@ -1,0 +1,126 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Services\\RED.Services.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\RED.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\RED.Core.csproj",
+        "projectName": "RED.Core",
+        "projectPath": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\RED.Core.csproj",
+        "packagesPath": "C:\\Users\\rexxr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rexxr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Services\\RED.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Services\\RED.Services.csproj",
+        "projectName": "RED.Services",
+        "projectPath": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Services\\RED.Services.csproj",
+        "packagesPath": "C:\\Users\\rexxr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rexxr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\RED.Core.csproj": {
+                "projectPath": "C:\\Users\\rexxr\\Documents\\projectss\\real-estate-management\\src\\RED.Core\\RED.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

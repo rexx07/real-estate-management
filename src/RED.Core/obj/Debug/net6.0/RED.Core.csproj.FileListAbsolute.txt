@@ -1,0 +1,12 @@
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\bin\Debug\net6.0\RED.Core.deps.json
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\bin\Debug\net6.0\RED.Core.dll
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\bin\Debug\net6.0\RED.Core.pdb
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.csproj.AssemblyReference.cache
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.AssemblyInfoInputs.cache
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.AssemblyInfo.cs
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.csproj.CoreCompileInputs.cache
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.dll
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\refint\RED.Core.dll
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\RED.Core.pdb
+C:\Users\rexxr\Documents\projectss\real-estate-management\src\RED.Core\obj\Debug\net6.0\ref\RED.Core.dll
