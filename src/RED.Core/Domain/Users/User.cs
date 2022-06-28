@@ -1,5 +1,6 @@
 ﻿using Core.Domain.Common;
 using Core.Domain.Properties;
+
 namespace Core.Domain.Users;
 
 public class User : BaseEntity
@@ -8,7 +9,7 @@ public class User : BaseEntity
     public string LastName { get; set; }
     public string UserEmail { get; set; }
     public string Password { get; set; }
-    public string? Picture { get; set; } 
+    public string? Picture { get; set; }
     public PasswordFormat PasswordFormatId { get; set; }
     public string PasswordSalt { get; set; }
     public string? AdminComment { get; set; }
@@ -22,14 +23,13 @@ public class User : BaseEntity
     public DateTime CreatedOnUtc { get; set; }
     public DateTime? LastLoginDateUtc { get; set; }
     public DateTime LastActivityDateUtc { get; set; }
-    
+
     public string? Facebook { get; set; }
     public string? Twitter { get; set; }
     public string? Instagram { get; set; }
     public string? Linkedin { get; set; }
-    
-    public int AddressId { get; set; }
-    public Address UserAddress { get; set; }
 
-    public ICollection<Property> Properties { get; set; }
+    public ICollection<Address>? UserAddresses { get; set; }
+
+    public ICollection<Property>? Properties { get; set; }
 }

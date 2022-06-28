@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core.Data;
 
-public class RedDbContext: DbContext
+public class RedDbContext : DbContext
 {
-    public RedDbContext(DbContextOptions<RedDbContext> options):base(options)
+    public RedDbContext(DbContextOptions<RedDbContext> options) : base(options)
     {
     }
-    
+
     public DbSet<User> Users { get; set; }
     public DbSet<Property> Properties { get; set; }
     public DbSet<PropertyImage> PropertyImages { get; set; }
@@ -23,14 +23,12 @@ public class RedDbContext: DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<User>().HasKey(u => u.Id);
-        builder.Entity<User>().HasOne(u => u.UserAddress)
-            .WithOne(a => a.User).HasForeignKey<User>(u => u.AddressId);
 
         builder.Entity<Property>().HasKey(p => p.Id);
         builder.Entity<Property>().HasOne(p => p.User)
             .WithMany(u => u.Properties).HasForeignKey(p => p.SellerId);
-        builder.Entity<Property>().HasOne<PropertyType>().WithMany(pt => pt.Properties)
-            .HasForeignKey(p => p.PropertyTypeId);
+        builder.Entity<Property>().HasOne(pt => pt.PropertyType)
+            .WithMany(pt => pt.Properties).HasForeignKey(p => p.PropertyTypeId);
         builder.Entity<Property>().HasMany(p => p.PropertyImages)
             .WithOne(pi => pi.Property);
         builder.Entity<Property>().HasOne(p => p.Address)
@@ -40,11 +38,17 @@ public class RedDbContext: DbContext
         builder.Entity<PropertyImage>().HasOne(pi => pi.Property)
             .WithMany(p => p.PropertyImages).HasForeignKey(pi => pi.PropertyId);
 
+        builder.Entity<PropertyType>().HasKey(pt => pt.Id);
+        builder.Entity<PropertyType>().HasMany(pt => pt.Properties)
+            .WithOne(pt => pt.PropertyType);
+        builder.Entity<PropertyType>().HasOne(pt => pt.Agent).WithOne()
+            .HasForeignKey<PropertyType>(u => u.AgentId);
+
         builder.Entity<Address>().HasKey(a => a.Id);
         builder.Entity<Address>().HasOne(p => p.Property)
-            .WithOne().HasForeignKey<Address>(a => a.PropertyId);
+            .WithOne(p => p.Address).HasForeignKey<Address>(a => a.PropertyId);
         builder.Entity<Address>().HasOne(a => a.User)
-            .WithOne(u => u.UserAddress).HasForeignKey<Address>(a => a.OfficeId);
+            .WithMany(u => u.UserAddresses).HasForeignKey(a => a.OfficeId);
 
         builder.Entity<Appointment>().HasKey(a => a.Id);
 
@@ -59,7 +63,7 @@ public class RedDbContext: DbContext
             .HasForeignKey<Comment>(c => c.PropertyId);
 
         builder.Entity<Notification>().HasKey(n => n.Id);
-        builder.Entity<Notification>().HasOne<User>(n => n.Admin).WithOne()
+        builder.Entity<Notification>().HasOne(n => n.Admin).WithOne()
             .HasForeignKey<Notification>(n => n.AdminId);
     }
 }
