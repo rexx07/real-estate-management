@@ -11,10 +11,9 @@ public interface IUserService : IServiceBase<User>
 {
     Task<IEnumerable<User>> GetAllUsers();
     Task<User?> GetUserById(int userId);
-    Task<IList<User>> GetUsersByIds(int[] userIds);
     Task<User?> GetUserByEmail(string email);
     Task<User?> GetUserWithDetails(int userId);
-    Task AddUser(User user);
+    Task CreateUser(User user);
     Task UpdateUser(User user);
     Task DeleteUser(User user);
 }

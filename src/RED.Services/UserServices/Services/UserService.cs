@@ -24,23 +24,6 @@ public class UserService: ServiceBase<User>, IUserService
             .Include(u => u.UserAddresses).FirstOrDefault();
     }
 
-    public async Task<IList<User>> GetUsersByIds(int[] userIds)
-    {
-        if (userIds.ToString() == null || userIds.Length == 0)
-            return new List<User>();
-
-        var users = new List<User>();
-        foreach (var id in userIds)
-        {
-            var user = FindByCondition(u => u.Id.Equals(id)).Include(u => u.Properties)
-                .Include(u => u.UserAddresses).FirstOrDefault();
-            if (user != null)
-                users.Add(user);
-        }
-
-        return await Task.FromResult(users);
-    }
-
     public Task<User?> GetUserByEmail(string email)
     {
         if (string.IsNullOrWhiteSpace(email))
@@ -55,16 +38,8 @@ public class UserService: ServiceBase<User>, IUserService
         throw new NotImplementedException();
     }
 
-    public Task AddUser(User user)
+    public Task CreateUser(User user)
     {
-        var users = FindAll().OrderBy(u => u.UserEmail).ToListAsync();
-        
-        if (!users.Result.Contains(user))
-            throw new ArgumentNullException(nameof(user.Active));
-
-        var newUser = user.UserEmail.Trim();
-        EmailValidator.Validate(newUser);
-
         Create(user);
         return Task.CompletedTask;
     }

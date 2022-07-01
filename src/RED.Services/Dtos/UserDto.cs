@@ -1,9 +1,10 @@
-﻿using Core.Domain.Common;
+﻿using Core.Domain;
+using Core.Domain.Common;
 using Core.Domain.Properties;
 
 namespace RED.Services.Dtos;
 
-public class UserDto
+public class UserDto: BaseViewModelEntity
 {
     public UserDto()
     {
